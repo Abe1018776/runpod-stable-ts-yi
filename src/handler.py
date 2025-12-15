@@ -6,13 +6,13 @@ import tempfile
 import torch
 
 # Load model globally for warm starts
-MODEL_ID = "ivrit-ai/yi-whisper-large-v3"
+MODEL_ID = "ivrit-ai/yi-whisper-large-v3-ct2"
 DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
 
 print(f"Loading model {MODEL_ID} on {DEVICE}...")
 try:
     # Load the model we baked in builder.py
-    model = stable_whisper.load_model(MODEL_ID, device=DEVICE)
+    model = stable_whisper.load_faster_whisper(MODEL_ID, device=DEVICE)
     print("Model loaded successfully.")
 except Exception as e:
     print(f"Error loading model: {e}")

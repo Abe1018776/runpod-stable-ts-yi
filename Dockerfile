@@ -18,6 +18,7 @@ WORKDIR /app
 RUN pip install --no-cache-dir \
     runpod \
     scipy \
+    faster-whisper \
     git+https://github.com/ivrit-ai/stable-ts.git
 
 # Copy builder script and bake the model into the image

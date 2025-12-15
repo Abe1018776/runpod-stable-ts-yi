@@ -2,7 +2,7 @@ import stable_whisper
 import torch
 
 # The user's custom fine-tuned model on Hugging Face
-MODEL_ID = "ivrit-ai/yi-whisper-large-v3"
+MODEL_ID = "ivrit-ai/yi-whisper-large-v3-ct2"
 
 print(f"Downloading and caching model: {MODEL_ID}...")
 
@@ -11,6 +11,6 @@ print(f"Downloading and caching model: {MODEL_ID}...")
 # provided we ensure the cache is preserved or copying is done right in Docker.
 # Ideally, we should specify a cache dir or rely on default text.
 # Docker build usually persists /root/.cache/huggingface if not cleared.
-model = stable_whisper.load_model(MODEL_ID)
+model = stable_whisper.load_faster_whisper(MODEL_ID)
 
 print("Model successfully downloaded.")
