@@ -1,0 +1,18 @@
+{
+    "title": "Stable-TS Yi-Large-v3 Worker",
+    "description": "Serverless worker for ivrit-ai/yi-whisper-large-v3 using stable-ts for forced alignment and transcription.",
+    "type": "serverless",
+    "category": "audio",
+    "iconUrl": "https://avatars.githubusercontent.com/u/1018776?v=4",
+    "config": {
+        "runsOn": "GPU",
+        "containerDiskInGb": 20,
+        "presets": [
+            {
+                "name": "Default",
+                "defaults": {}
+            }
+        ],
+        "env": []
+    }
+}

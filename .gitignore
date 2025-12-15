@@ -22,7 +22,7 @@ wheels/
 *.egg
 
 # RunPod/Docker
-.runpod/
+# .runpod/
 
 # Models (just in case)
 *.pt

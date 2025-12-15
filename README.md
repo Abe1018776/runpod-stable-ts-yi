@@ -1,5 +1,7 @@
 # RunPod Worker for Stable-TS with Custom Yi Whisper Model
 
+[![Runpod](https://api.runpod.io/badge/Abe1018776/runpod-stable-ts-yi)](https://console.runpod.io/hub/Abe1018776/runpod-stable-ts-yi)
+
 This repository contains a RunPod serverless worker implementation that uses [stable-ts](https://github.com/jianfch/stable-ts) (or the ivrit-ai fork) and the fine-tuned model `ivrit-ai/yi-whisper-large-v3`.
 
 ## Features
