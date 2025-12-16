@@ -1,5 +1,6 @@
 # Base image with Python, PyTorch, and CUDA support
-FROM pytorch/pytorch:2.1.0-cuda11.8-cudnn8-runtime
+# Upgrading to CUDA 12.1 to match newer ctranslate2/faster-whisper requirements
+FROM pytorch/pytorch:2.2.0-cuda12.1-cudnn8-runtime
 
 # Install system dependencies required for Whisper/Audio processing
 ENV DEBIAN_FRONTEND=noninteractive
@@ -18,6 +19,7 @@ WORKDIR /app
 RUN pip install --no-cache-dir \
     runpod \
     scipy \
+    yt-dlp \
     faster-whisper \
     git+https://github.com/ivrit-ai/stable-ts.git
 
