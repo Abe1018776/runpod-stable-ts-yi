@@ -10,6 +10,8 @@
         }
     ],
     "config": {
+        "gpuTypeId": "NVIDIA A40",
+        "gpuCount": 1,
         "env": [],
         "allowedCudaVersions": [
             "11.8"
