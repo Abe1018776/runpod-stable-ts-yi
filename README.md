@@ -15,8 +15,8 @@ This repository contains a RunPod serverless worker implementation that uses [st
 ### Build and Push
 
 ```bash
-docker build -t your-username/runpod-stable-ts-yi:v1 .
-docker push your-username/runpod-stable-ts-yi:v1
+docker build -t fink5984zs/runpod-stable-ts-yi:v1 .
+docker push fink5984zs/runpod-stable-ts-yi:v1
 ```
 
 ### GitHub Actions CI/CD
