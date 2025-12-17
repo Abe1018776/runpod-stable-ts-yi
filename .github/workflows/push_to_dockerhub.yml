@@ -31,5 +31,7 @@ jobs:
           tags: |
             ${{ secrets.DOCKERHUB_USERNAME }}/runpod-stable-ts-yi:latest
             ${{ secrets.DOCKERHUB_USERNAME }}/runpod-stable-ts-yi:${{ github.sha }}
+          build-args: |
+             HF_TOKEN=${{ secrets.HF_TOKEN }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
