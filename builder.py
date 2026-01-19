@@ -1,16 +1,27 @@
-import stable_whisper
-import torch
+import faster_whisper
+import os
+from huggingface_hub import login
 
-# The user's custom fine-tuned model on Hugging Face
-MODEL_ID = "ivrit-ai/yi-whisper-large-v3-ct2"
+def download_models():
+    # Authenticate if token is present
+    hf_token = os.environ.get("HF_TOKEN")
+    if hf_token:
+        print("HF_TOKEN found, logging in...")
+        login(token=hf_token)
+    else:
+        print("No HF_TOKEN found, proceeding without authentication...")
 
-print(f"Downloading and caching model: {MODEL_ID}...")
+    print("Starting model download...")
 
-# stable_whisper.load_model() downloads and returns the model.
-# By running this during build, we cache the weights in the ~/.cache/huggingface (or similar)
-# provided we ensure the cache is preserved or copying is done right in Docker.
-# Ideally, we should specify a cache dir or rely on default text.
-# Docker build usually persists /root/.cache/huggingface if not cleared.
-model = stable_whisper.load_faster_whisper(MODEL_ID)
+    # Single Requested Model
+    model_id = "ivrit-ai/yi-whisper-large-v3-ct2"
+    
+    print(f"Downloading Whisper model: {model_id}...")
+    try:
+        faster_whisper.WhisperModel(model_id)
+        print(f"Successfully downloaded {model_id}")
+    except Exception as e:
+        print(f"Error downloading {model_id}: {e}")
 
-print("Model successfully downloaded.")
+if __name__ == "__main__":
+    download_models()

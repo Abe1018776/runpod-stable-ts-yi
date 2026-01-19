@@ -15,9 +15,20 @@ This repository contains a RunPod serverless worker implementation that uses [st
 ### Build and Push
 
 ```bash
-docker build -t your-username/runpod-stable-ts-yi:v1 .
-docker push your-username/runpod-stable-ts-yi:v1
+docker build -t fink5984zs/runpod-stable-ts-yi:v1 .
+docker push fink5984zs/runpod-stable-ts-yi:v1
 ```
+
+### GitHub Actions CI/CD
+
+This repository includes a GitHub Action to automatically build and push the Docker image to **DockerHub** on every push to `master`.
+
+**Setup:**
+1. Go to **Settings > Secrets and variables > Actions** in your GitHub repository.
+2. Add the following repository secrets:
+    - `DOCKERHUB_USERNAME`: Your DockerHub username.
+    - `DOCKERHUB_TOKEN`: Your DockerHub Access Token (or password).
+
 
 ### RunPod Setup
 
